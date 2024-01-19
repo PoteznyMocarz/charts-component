@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="/src/output.css">
+  <link rel="stylesheet" href="tooltip.css">
+  <title>Frontend Mentor | Expenses chart component</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+</head>
+<body class="font-DMSans bg-cream flex h-[100vh] justify-center items-center max-[450px]:px-[4%] max-[450px]:py-[200px]">
+  <div class="w-[500px] flex flex-col h-fit gap-6">
+    <div class="flex h-fit py-[5%] px-[6%] items-center justify-between bg-softRed rounded-[18px]">
+      <div class="flex flex-col">
+        <span class="text-paleOrange">My balance</span>
+        <span class="text-paleOrange font-bold text-[33px]">$921.48</span>
+      </div>
+        <img src="/images/logo.svg" alt="logo">
+    </div>
+
+    <div class="bg-paleOrange rounded-[15px] py-[5%] px-[8%] max-[450px]:px-[5%]">
+      <span class="text-darkBrown font-bold text-[32px] max-[450px]:text-[27px]">Spending - Last 7 days</span>
+
+      <div class="transition-all flex justify-between h-[240px] w-full items-end gap-[6px] pb-[20px] border-b-[1px] border-mediumBrown border-opacity-30 mt-[25px] relative">
+        <div id="tooltip" class="absolute bg-darkBrown text-paleOrange py-[9px] px-[9px] rounded-[4px] font-[500] opacity-0 z-10 max-[450px]:translate-x-[-5%]">
+          <span id="spends" class="text-[17px]">17.45$</span>
+        </div>
+        <div class="flex flex-col h-[34%] w-[11%] items-center gap-[6px]">
+          <div id="mon" class="h-full w-full bg-softRed rounded-[5px] chart"></div>
+          <span class="text-mediumBrown transition-all">mon</span>
+        </div>
+
+        <div class="flex flex-col h-[57%] w-[11%] items-center gap-[6px]">
+          <div id="tue" class="h-full w-full bg-softRed rounded-[5px] chart"></div>
+          <span class="text-mediumBrown">tue</span>
+        </div>
+
+        <div class="flex flex-col h-[80%] w-[11%] items-center gap-[6px]">
+          <div id="wed" class="h-full w-full bg-cyanColor rounded-[5px] chart"></div>
+          <span class="text-mediumBrown">wed</span>
+        </div>
+
+        <div class="flex flex-col h-[50%] w-[11%] items-center gap-[6px]">
+          <div id="thu" class="h-full w-full bg-softRed rounded-[5px] chart"></div>
+          <span class="text-mediumBrown">thu</span>
+        </div>
+
+        <div class="flex flex-col h-[40%] w-[11%] items-center gap-[6px]">
+          <div id="fri" class="h-full w-full bg-softRed rounded-[5px] chart"></div>
+          <span class="text-mediumBrown">fri</span>
+        </div>
+
+        <div class="flex flex-col h-[65%] w-[11%] items-center gap-[6px]">
+          <div id="sat" class="h-full w-full bg-softRed rounded-[5px] chart"></div>
+          <span class="text-mediumBrown">sat</span>
+        </div>
+
+        <div class="flex flex-col h-[45%] w-[11%] items-center gap-[6px]">
+          <div id="sun" class="h-full w-full bg-softRed rounded-[5px] chart"></div>
+          <span class="text-mediumBrown">sun</span>
+        </div>
+
+      </div>
+      <div class="pt-[30px] pb-[15px]">
+        <span class="block text-mediumBrown text-[17px]">Total this month</span>
+        <div class="flex justify-between h-fit items-center">
+            <span class="text-[46px] font-bold text-darkBrown">$478.33</span>
+          <div class="flex flex-col">
+            <span class="self-end text-darkBrown font-bold text-[17px]">+2.4%</span>
+            <span class="text-mediumBrown text-[17px]">from last month</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
+<!-- 
+  mon: left-[-3%] top-[40%] 
+  tue: left-[12%] top-[19%]
+  wed: left-[27%] top-[-2%]
+  thu: left-[42%] top-[25%]
+  fri: left-[56%] top-[35%]
+  sat: left-[71%] top-[13%]
+  sun: left-[86%] top-[31%]
+-->
